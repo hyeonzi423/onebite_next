@@ -7,7 +7,6 @@ export default function BookItem({
   title,
   subTitle,
   author,
-  description,
   publisher,
   coverImgUrl,
 }: BookData) {
