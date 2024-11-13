@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: { id: string | string[]
 
   const book = await response.json();
 
-  const { id, title, subTitle, description, author, publisher, coverImgUrl } = book;
+  const { title, subTitle, description, author, publisher, coverImgUrl } = book;
 
   return (
     <div className={style.container}>

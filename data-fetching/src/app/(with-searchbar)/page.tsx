@@ -3,7 +3,7 @@ import style from "./page.module.css";
 import { BookData } from "@/types";
 
 async function AllBooks() {
-  const response = await fetch(`http://localhost:12345/book`);
+  const response = await fetch(`http://localhost:12345/book`, { cache: "no-store" });
   if (!response.ok) {
     return <div>오류가 발생했습니다...</div>;
   }
