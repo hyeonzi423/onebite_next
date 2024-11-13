@@ -47,3 +47,11 @@ export default async function Home() {
     </div>
   );
 }
+
+/* 
+데이터 캐시 방법
+1. { cache: "force-cache"} : 요청의 결과를 무조건 캐싱, 한번 호출 된 이후에는 다시는 호출하지 않음
+2. { cache: "no-store"} : 결과를 저장하지 않음, 캐싱을 아예 하지 않도록 설정
+3. { next: {revalidate: 3}} : 특정 시간을 주기로 캐시를 업데이트, 페이지 라우터의 ISR 방식과 유사함
+4. { next: {tags ['a'] }} : On-Demand Revalidate, 요청이 들어왔을 때 데이터를 최신화
+*/
