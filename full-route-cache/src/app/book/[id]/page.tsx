@@ -1,9 +1,19 @@
+import { notFound } from "next/navigation";
 import style from "./page.module.css";
+
+//export const dynamicParams = false; //아래 선언한 generateStaticParams에 없는 값은 url 연결을 하지 않음
+
+export function generateStaticParams() {
+  return [{ id: "1" }, { id: "2" }, { id: "3" }];
+}
 
 export default async function Page({ params }: { params: { id: string | string[] } }) {
   const response = await fetch(`http://localhost:12345/book/${params.id}`);
 
   if (!response.ok) {
+    if (response.status === 404) {
+      notFound();
+    }
     return <div>오류가 발생했습니다...</div>;
   }
 

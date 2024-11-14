@@ -8,7 +8,9 @@ export default async function Page({
     q?: string;
   };
 }) {
-  const response = await fetch(`http://localhost:12345/book/search?q=${searchParams.q}`);
+  const response = await fetch(`http://localhost:12345/book/search?q=${searchParams.q}`, {
+    cache: "force-cache",
+  });
 
   if (!response.ok) {
     return <div>오류가 발생했습니다...</div>;
